@@ -24,7 +24,8 @@ def find_and_move(src_dir):
                         create_dir(new_path)
                         new_path_file = os.path.join(new_path, filename)
                         if not os.path.isfile(new_path_file):
-                            shutil.move(filename, new_path)
+                            print (new_path, path)
+                            shutil.move(path, new_path)
                         else:
                             print (new_path_file + ' Already Exists!')
         else:
@@ -36,6 +37,7 @@ def find_date_original(filename):
     global month
     #if exif data exists, get date created, otherwise year and date are unknown
     try:
+        print (filename)
         d = Image.open(filename)._getexif()[36867]
     #convert unicode date from exif data to a string object
         date_obj = datetime.datetime.strptime(d, '%Y:%m:%d %H:%M:%S')
