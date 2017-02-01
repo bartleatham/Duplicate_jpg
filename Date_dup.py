@@ -20,12 +20,13 @@ def find_and_move(src_dir):
                         path = os.path.join(dirName, filename)
                         find_date_original(path)
                         new_path = "./%s/%s" % (year,month)
+                        new_full_path = os.path.join(i, new_path)
                         #print new_path
-                        create_dir(new_path)
-                        new_path_file = os.path.join(new_path, filename)
+                        create_dir(new_full_path)
+                        new_path_file = os.path.join(new_full_path, filename)
                         if not os.path.isfile(new_path_file):
                             print (new_path, path)
-                            shutil.move(path, new_path)
+                            shutil.move(path, new_full_path)
                         else:
                             print (new_path_file + ' Already Exists!')
         else:
