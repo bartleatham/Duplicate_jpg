@@ -140,7 +140,7 @@ def print_results(dict1):
         print('Duplicates Found:')
         print(
             'The following files are identical. The name could differ, but the'
-            ' content is identical'
+            ' content is identical, the n+1 occurances of file will be appended with _DUP'
             )
         print('___________________')
         for result in results:
